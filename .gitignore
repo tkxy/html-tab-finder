@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 构建产物
+*.app/
+build/
+dist/
+node_modules/
+
+# 日志
+*.log
+
+# 临时缓存
+cache/
+__pycache__/
+.cache/
