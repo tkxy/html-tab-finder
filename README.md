@@ -25,14 +25,49 @@
 
 ### 1. 安装 Chrome 扩展（所有系统）
 
+#### 方式 A：不会用 git，直接下载 ZIP（推荐给大多数人）
+
+1. 打开仓库页面：
+   ```text
+   https://github.com/tkxy/html-tab-finder
+   ```
+2. 点击页面右上方绿色按钮 **Code**
+3. 在弹出的菜单里点击 **Download ZIP**
+4. 下载完成后，双击解压，得到一个类似这样的文件夹：
+   ```text
+   html-tab-finder-main/
+   ```
+5. 打开 Chrome，在地址栏输入：
+   ```text
+   chrome://extensions
+   ```
+6. 打开页面右上角 **开发者模式**
+7. 点击页面左上角 **加载未打包的扩展程序**
+8. 在文件选择器里，选择解压后文件夹里的 **extension** 子文件夹：
+   ```text
+   html-tab-finder-main/extension/
+   ```
+   注意：不要选择 `html-tab-finder-main/` 根目录，必须选择里面的 `extension/` 目录。
+9. 安装成功后，Chrome 扩展列表里会出现 **HTML tab**
+10. 点击 Chrome 工具栏右上角的拼图图标 🧩，找到 **HTML tab**，点击图钉 📌 把它固定到工具栏
+11. 点击工具栏里的 **HTML tab** 图标，即可打开索引页
+
+#### 方式 B：会用 git，克隆仓库安装
+
 1. 克隆本仓库：
    ```bash
    git clone https://github.com/tkxy/html-tab-finder.git
    ```
-2. 打开 Chrome → 地址栏输入 `chrome://extensions`
+2. 打开 Chrome → 地址栏输入：
+   ```text
+   chrome://extensions
+   ```
 3. 右上角打开 **开发者模式**
 4. 左上角点击 **加载未打包的扩展程序**
-5. 选择仓库里的 `extension/` 目录
+5. 选择仓库里的 `extension/` 目录：
+   ```text
+   html-tab-finder/extension/
+   ```
 6. 把扩展图标钉到工具栏
 
 ### 2.（可选 · macOS）装 Helper App，让"在 Finder 中显示"真正能用
@@ -49,10 +84,27 @@ bash helper/install.sh
 
 ### 首次使用：扫描本地
 
-1. 点扩展图标（或快捷键 `Cmd/Ctrl + Shift + H`）打开索引页
-2. 点右上角 **📁 扫描本地 HTML**
-3. 选你想索引的目录（例如 `~/Documents/`）→ 允许读取
-4. 等几秒，所有 HTML 自动入库
+1. 点击 Chrome 工具栏里的 **HTML tab** 图标，打开索引页
+2. 点击页面右上角 **📁 扫描本地 HTML**
+3. 在系统文件夹选择器里，选择你想扫描的目录，例如：
+   ```text
+   Documents/
+   Downloads/
+   Desktop/
+   你常放 AI 生成 HTML 的文件夹/
+   ```
+   不建议直接选择整个用户根目录，因为 Chrome 可能会因为权限限制拒绝读取。
+4. Chrome 会弹出文件访问确认，点击 **允许**
+5. 首次使用时，插件可能会要求输入你的 macOS 用户名，用于拼出本地文件路径。比如你的路径是：
+   ```text
+   /Users/alex/Documents/report.html
+   ```
+   那用户名就是：
+   ```text
+   alex
+   ```
+6. 等几秒，插件会自动扫描该目录下所有 `.html` / `.htm` 文件，并以卡片形式展示
+7. 之后再次打开新的本地 HTML 文件，插件也会自动记录
 
 ### 日常使用
 
