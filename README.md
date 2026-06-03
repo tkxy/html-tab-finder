@@ -2,9 +2,12 @@
 
 > 一键找到你电脑上所有 AI 生成的 HTML 文件 — Chrome 扩展
 
+[English](./README_EN.md)
+
 每天用 AI 生成一堆 HTML 报告/PPT/原型，散落在各个会话目录里，找起来很费劲？这个扩展帮你**一站式索引、按类型筛选、一键打开 Finder、安全删除**。
 
-![preview](docs/preview.png)
+<!-- 预览截图：以后想加就在 docs/ 文件夹放 preview.png 后取消下一行注释 -->
+<!-- ![preview](docs/preview.png) -->
 
 ## ✨ 特性
 
