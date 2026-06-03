@@ -87,15 +87,19 @@ function faviconHTML(it) {
 // ─── 数据加载 ───────────────────────────────────────────────────────────
 async function loadAll() {
   const { items = {} } = await chrome.storage.local.get("items");
-  // 过滤掉非本地项 + 自动清理 storage 里的旧网页记录（一次性）
+  // 严格过滤：必须是 file:// 协议 + .html/.htm 后缀的，否则一律剔除
   let cleaned = false;
   const cleanedItems = {};
   for (const [url, it] of Object.entries(items)) {
-    if (it && it.isLocal && url.startsWith("file:")) {
-      cleanedItems[url] = it;
-    } else {
+    if (!it) { cleaned = true; continue; }
+    if (!url.startsWith("file://")) { cleaned = true; continue; }
+    const lower = url.toLowerCase().split("?")[0];
+    if (!lower.endsWith(".html") && !lower.endsWith(".htm")) {
       cleaned = true;
+      continue;
     }
+    // 修正 isLocal 字段（防御）
+    cleanedItems[url] = { ...it, isLocal: true };
   }
   if (cleaned) {
     await chrome.storage.local.set({ items: cleanedItems });
