@@ -177,8 +177,3 @@ html-tab-finder/
 ## 📜 许可证
 
 MIT — 随便用，标个名就行。
-
-## 🙏 致谢
-
-- 视觉灵感来自 [Tab Out](https://chromewebstore.google.com/detail/tab-out/imocfgofpgjhgklobbbpobhkbkjllegj)（Newsreader + DM Sans + 暖纸色）
-- macOS URL Scheme 注册思路参考 [LaunchServices Programming Guide](https://developer.apple.com/library/archive/documentation/Carbon/Conceptual/LaunchServicesConcepts/)
